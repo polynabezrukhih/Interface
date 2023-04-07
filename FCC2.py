@@ -194,11 +194,43 @@ class Ui_MainWindow(object):
         self.action_save_as.setText(_translate("MainWindow", "Сохранить как..."))
         self.action_exit.setText(_translate("MainWindow", "Выйти"))
         self.action_find_reactor.setText(_translate("MainWindow", "Выбрать"))
+        # self.push_btm()
 
-        def push_btm(btm):
-            if btm == action_create_rezh or action_create_rezh or action_open_rezh:
-                rezh.show()
-            ifelse btm ==
+    # def push_btm(self):
+    #     self.action_create_rezh.clicked.connect(lambda: self.open_rezh)
+    #     self.action_edit_rezh.clicked.connect(lambda: self.open_rezh)
+    #     self.action_open_rezh.clicked.connect(lambda: self.open_rezh)
+        # self.action_create_catal.clicked.connect(lambda: self.open_vidget(
+        # self.action_edit_catal.clicked.connect(lambda: self.open_vidget(
+        # self.action_open_catal.clicked.connect(lambda: self.open_vidget(
+        # self.action_create_reactor.clicked.connect(lambda: self.open_vidget(
+        # self.action_edit_reactor.clicked.connect(lambda: self.open_vidget(
+        # self.action_save_reactor.clicked.connect(lambda: self.open_vidget(
+        # self.action_save_feed.clicked.connect(lambda: self.open_vidget(
+        # self.action_edit_feed.clicked.connect(lambda: self.open_vidget(
+        # self.action_save_adit.clicked.connect(lambda: self.open_vidget(
+
+    # def open_rezh(self, Form):
+    #         rezh(Form)
+
+class Form_rezh(QtWidgets.QWidget, Ui_Form_rezh):
+    def __init__(self, parent=None):
+        super(Form_rezh, self).__init__(parent)
+        self.setupUi(self)
+
+
+class Main(QtWidgets.QWidget, Ui_MainWindow):
+    def __init__(self, parent=None):
+        super(Main, self).__init__(parent)
+        self.setupUi(self)
+        self.action_create_rezh.clicked.connect(self.onClicked)
+        self.action_edit_rezh.clicked.connect(self.onClicked)
+        self.action_open_rezh.clicked.connect(self.onClicked)
+
+    def onClicked(self):
+        self.rezh = Form_rezh()
+        self.rezh.show()
+
 
 if __name__ == "__main__":
     import sys

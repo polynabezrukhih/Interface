@@ -25,7 +25,7 @@ class Ui_MainWindow(object):
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("Interface_project/img/icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
-        MainWindow.setWindowOpacity(0.0)
+        MainWindow.setWindowOpacity(1.0)
         MainWindow.setToolTipDuration(0)
         MainWindow.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "color: rgb(0, 0, 0);\n"
